@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TestingTesting.WebAPI.Controllers
 {
-    public class DetailsController:Controller
+    public class DetailsController : Controller
     {
         // PUT api/Details/5
         [HttpPut("api/Details/{detailId:int}")]
