@@ -7,7 +7,7 @@ namespace TestingTesting.Tests
 {
     public static class OrderFactory
     {
-        public static Order ValidNoDiscounts()
+        public static Order ValidNoDiscountsNoTax()
         {
             var order = new Order()
             {
@@ -16,13 +16,49 @@ namespace TestingTesting.Tests
             };
 
             order.Details = new List<OrderDetail>();
-
-            
+            order.Details.Add(OrderDetailFactory.Valid_NoTax_Small(1));
+            return order;
         }
 
-        public static OrderDetail ValidGenTaxedSmall()
+        public static Order ValidNoDiscountsTax()
         {
+            var order = new Order()
+            {
+                Id = 1001,
+                Customer = "Jim Kirk"
+            };
 
+            order.Details = new List<OrderDetail>();
+            order.Details.Add(OrderDetailFactory.Valid_GenTax_Small(1));
+            return order;
         }
+
+        public static Order ValidNameDiscountNoTax()
+        {
+            var order = new Order()
+            {
+                Id = 1001,
+                Customer = "John Smith"
+            };
+
+            order.Details = new List<OrderDetail>();
+            order.Details.Add(OrderDetailFactory.Valid_NoTax_Small(1));
+            return order;
+        }
+
+        public static Order ValidNameDiscountTax()
+        {
+            var order = new Order()
+            {
+                Id = 1001,
+                Customer = "John Smith"
+            };
+
+            order.Details = new List<OrderDetail>();
+            order.Details.Add(OrderDetailFactory.Valid_GenTax_Small(1));
+            return order;
+        }
+
+
     }
 }
