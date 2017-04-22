@@ -10,4 +10,9 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestingTesting.Core\TestingTesting.Core.csproj" />
+    <ProjectReference Include="..\TestingTesting.Domain\TestingTesting.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TestingTesting.Core.Domain;
+using TestingTesting.Domain;
 
 namespace TestingTesting.Tests
 {
@@ -17,12 +17,12 @@ namespace TestingTesting.Tests
 
             order.Details = new List<OrderDetail>();
 
-            
+            throw new NotImplementedException();
         }
 
         public static OrderDetail ValidGenTaxedSmall()
         {
-
+            throw new NotImplementedException();
         }
     }
 }
