@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TestingTesting.Domain
 {
-    public class OrderDetail
+    public class Detail
     {
         public int Id { get; set; }
         public string  Name { get; set; }
@@ -13,6 +13,8 @@ namespace TestingTesting.Domain
         public decimal Price { get; set; }
         public bool FoodTaxed { get; set; }
         public bool GeneralTaxed { get; set; }
+        public int OrderId { get; set; }
+        public virtual Order Order { get; set; }
 
     }
 }

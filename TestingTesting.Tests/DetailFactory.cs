@@ -5,11 +5,11 @@ using TestingTesting.Domain;
 
 namespace TestingTesting.Tests
 {
-    public static class OrderDetailFactory
+    public static class DetailFactory
     {
-        public static OrderDetail Valid_GenTax_Small()
+        public static Detail Valid_GenTax_Small()
         {
-            return new OrderDetail()
+            return new Detail()
             {
                 Id = 23323,
                 Name = "Gold Bar",
@@ -21,9 +21,9 @@ namespace TestingTesting.Tests
             };
         }
 
-        public static OrderDetail Valid_GenTax_Med()
+        public static Detail Valid_GenTax_Med()
         {
-            return new OrderDetail()
+            return new Detail()
             {
                 Id = 23323,
                 Name = "",

@@ -14,6 +14,6 @@ namespace TestingTesting.Domain
         public decimal Discount { get; set; }
         public decimal Total { get; set; }
 
-        public List<OrderDetail> Details { get; set; }
+        public virtual List<Detail> Details { get; set; }
     }
 }

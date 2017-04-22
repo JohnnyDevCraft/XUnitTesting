@@ -15,12 +15,12 @@ namespace TestingTesting.Tests
                 Customer = "Jim Kirk"
             };
 
-            order.Details = new List<OrderDetail>();
+            order.Details = new List<Detail>();
 
             throw new NotImplementedException();
         }
 
-        public static OrderDetail ValidGenTaxedSmall()
+        public static Detail ValidGenTaxedSmall()
         {
             throw new NotImplementedException();
         }
