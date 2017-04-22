@@ -9,48 +9,42 @@ namespace TestingTesting.WebAPI.Controllers
     public class OrdersController : Controller
     {
         // GET api/Orders
-        [Route("api/Orders")]
-        [HttpGet]
+        [HttpGet("api/Orders")]
         public IActionResult Get()
         {
             throw new NotImplementedException();
         }
 
         // GET api/Orders/5
-        [Route("api/Orders/{orderId:int}")]
-        [HttpGet]
+        [HttpGet("api/Orders/{orderId:int}")]
         public IActionResult Get(int orderId)
         {
             throw new NotImplementedException();
         }
 
         // POST api/Orders
-        [Route("api/Orders")]
-        [HttpPost]
+        [HttpPost("api/Orders")]
         public void Post()
         {
             throw new NotImplementedException();
         }
 
         // Post api/Orders/5/Details
-        [Route("api/Orders/{orderId:int}/Details")]
-        [HttpPost]
+        [HttpPost("api/Orders/{orderId:int}/Details")]
         public void Post(int orderId)
         {
             throw new NotImplementedException();
         }
 
         // PUT api/Orders/5
-        [Route("api/Orders/{orderId:int}")]
-        [HttpPut]
+        [HttpPut("api/Orders/{orderId:int}")]
         public void Put(int orderId)
         {
             throw new NotImplementedException();
         }
 
         // DELETE api/Orders/5
-        [Route("api/Orders/{orderId:int}")]
-        [HttpDelete]
+        [HttpDelete("api/Orders/{orderId:int}")]
         public void Delete(int orderId)
         {
             throw new NotImplementedException();

@@ -9,16 +9,14 @@ namespace TestingTesting.WebAPI.Controllers
     public class DetailsController:Controller
     {
         // PUT api/Details/5
-        [Route("api/Details/{detailId:int}")]
-        [HttpPut]
+        [HttpPut("api/Details/{detailId:int}")]
         public void Put(int detailId)
         {
             throw new NotImplementedException();
         }
 
         // DELETE api/Details/5
-        [Route("api/Details/{detailId:int}")]
-        [HttpDelete]
+        [HttpDelete("api/Details/{detailId:int}")]
         public void Delete(int detailId)
         {
             throw new NotImplementedException();
