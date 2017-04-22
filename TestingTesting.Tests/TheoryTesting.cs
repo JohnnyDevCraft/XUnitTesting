@@ -9,20 +9,18 @@ namespace TestingTesting.Tests
 {
     public class TheoryTesting
     {
-        public List<object[]> TestProcessData
+        public static List<object[]> TestProcessData()
         {
-            get
-            {
-                return new List<object[]>(){
-                    new object[] {OrderFactory.ValidNoDiscountsNoTax(), 0.0M, 0.0M},
-                    new object[] {OrderFactory.ValidNoDiscountsTax(), 0.0M, 0.086460M},
-                    new object[] {OrderFactory.ValidNameDiscountTax(), 0.0825M, 0.086460M}
-                };
-            }
+            return new List<object[]>(){
+                new object[] {OrderFactory.ValidNoDiscountsNoTax(), 0.0M, 0.0M},
+                new object[] {OrderFactory.ValidNoDiscountsTax(), 0.0M, 0.086460M},
+                new object[] {OrderFactory.ValidNameDiscountTax(), 0.0825M, 0.086460M}
+            };
+
         }
 
         [Theory]
-        [PropertyData("TestProcessData")]
+        [MemberData(nameof(TestProcessData))]
         public void TestProcessOrder(Order order, decimal discount, decimal salesTax)
         {
 
