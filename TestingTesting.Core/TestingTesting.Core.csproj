@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\Logic\" />
-    <Folder Include="Abstractions\Validation\" />
+    <ProjectReference Include="..\TestingTesting.Domain\TestingTesting.Domain.csproj" />
   </ItemGroup>
 
 </Project>
