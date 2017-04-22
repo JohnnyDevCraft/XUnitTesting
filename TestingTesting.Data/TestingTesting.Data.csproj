@@ -4,9 +4,4 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstractions\Logic\" />
-    <Folder Include="Abstractions\Validation\" />
-  </ItemGroup>
-
 </Project>

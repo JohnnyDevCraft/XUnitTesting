@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+TestingTesting.Domain/obj/**
+TestingTesting.Data/obj/**
+TestingTesting.Validation/obj/**
+TestingTesting.Logic/obj/**
+TestingTesting.Core/obj/**
+TestingTesting.WebAPI/obj/**
+
+TestingTesting.Domain/bin/**
+TestingTesting.Data/bin/**
+TestingTesting.Validation/bin/**
+TestingTesting.Logic/bin/**
+TestingTesting.Core/bin/**
+TestingTesting.WebAPI/bin/**
+.vs/

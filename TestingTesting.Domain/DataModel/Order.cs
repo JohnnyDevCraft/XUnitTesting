@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestingTesting.Core.Domain
+namespace TestingTesting.Domain
 {
     public class Order
     {
