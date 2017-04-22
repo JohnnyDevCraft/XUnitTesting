@@ -8,4 +8,7 @@
     <ProjectReference Include="..\TestingTesting.Domain\TestingTesting.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Validation\" />
+  </ItemGroup>
 </Project>
