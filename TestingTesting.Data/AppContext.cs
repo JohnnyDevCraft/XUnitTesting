@@ -10,6 +10,6 @@ namespace TestingTesting.Data
         }
 
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> Details { get; set; }
+        public DbSet<Detail> Details { get; set; }
     }
 }
