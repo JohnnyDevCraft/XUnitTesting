@@ -1,10 +1,19 @@
 ﻿using System;
+using TestingTesting.Core.Abstractions.Data;
 namespace TestingTesting.Data
 {
-    public class RepoFactory
+    public static class RepoFactory
     {
-        public RepoFactory()
+
+        public static IOrderRepo GetOrderRepo()
         {
+            return new OrderRepo();
         }
+
+        public static IDetailsRepo GetDetailsRepo()
+        {
+            return new DetailsRepo();
+        }
+
     }
 }

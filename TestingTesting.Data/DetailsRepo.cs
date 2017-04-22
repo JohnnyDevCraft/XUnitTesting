@@ -1,9 +1,10 @@
 ﻿using System;
+using TestingTesting.Core.Abstractions.Data;
 namespace TestingTesting.Data
 {
-    public class DetailRepo
+    public class DetailsRepo : IDetailsRepo
     {
-        public DetailRepo()
+        public DetailsRepo()
         {
         }
     }
