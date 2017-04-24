@@ -12,9 +12,15 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestingTesting.Core\TestingTesting.Core.csproj" />
+    <ProjectReference Include="..\TestingTesting.Data\TestingTesting.Data.csproj" />
+    <ProjectReference Include="..\TestingTesting.Domain\TestingTesting.Domain.csproj" />
+  </ItemGroup>
 </Project>

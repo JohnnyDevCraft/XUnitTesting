@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TestingTesting.Core.Abstractions.Data;
+using TestingTesting.Data;
 
 namespace TestingTesting.WebAPI
 {
@@ -29,6 +31,9 @@ namespace TestingTesting.WebAPI
         {
             // Add framework services.
             services.AddMvc();
+
+			services.AddScoped<IOrderRepo, OrderRepo>();
+			services.AddScoped<IDetailsRepo, DetailsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
