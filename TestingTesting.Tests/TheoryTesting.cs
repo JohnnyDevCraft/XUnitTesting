@@ -4,6 +4,7 @@ using Xunit.Extensions;
 using TestingTesting.Core.Implmentation;
 using TestingTesting.Core.Domain;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace TestingTesting.Tests
 {
@@ -28,6 +29,61 @@ namespace TestingTesting.Tests
 
             Assert.Equal(discount, order.Discount);
             Assert.Equal(salesTax, order.SalesTax);
+        }
+
+        public static List<object[]> ValidationTestData()
+        {
+            return new List<object[]>(){
+                new object[] {OrderFactory.ValidNoDiscountsNoTax(), false, false},
+                new object[] {OrderFactory.InValidNoCustomer(), true, false},
+                new object[] {OrderFactory.InvalidNullItems(), true, true},
+                new object[] {OrderFactory.InvalidNoItems(), true, true},
+                new object[] {OrderFactory.InvalidItemsZeroQnty(), false, false},
+                new object[] {null, true, true}
+
+            };
+
+        }
+
+        [Theory,
+         MemberData(nameof(ValidationTestData))]
+        public void TestValidationForOrders(Order order, bool ExpectException, bool nullEx)
+        {
+            var method = Type.GetType("TestingTesting.Core.Implmentation.OrderEngineSpecialized, TestingTesting.Core", true, true)
+                             .GetMethod("ValidateOrder", BindingFlags.Static | BindingFlags.NonPublic);
+            if (ExpectException && nullEx)
+            {
+                var ex = Assert.Throws<TargetInvocationException>(() => { method.Invoke(obj: null, parameters: new object[] { order }); });
+                Assert.IsType<ArgumentNullException>(ex.InnerException);
+            }
+            else if (ExpectException && !nullEx)
+            {
+                var ex = Assert.Throws<TargetInvocationException>(() => { method.Invoke(obj: null, parameters: new object[] { order }); });
+                Assert.IsType<ArgumentException>(ex.InnerException);
+            }
+            else
+            {
+                method.Invoke(null, new object[] { order });
+            }
+        }
+
+        [Theory,
+         MemberData(nameof(ValidationTestData))]
+        public void TestValidationForOrdersInLargeProcess(Order order, bool ExpectException, bool nullEx)
+        {
+
+            if (ExpectException && nullEx)
+            {
+                var ex = Assert.Throws<ArgumentNullException>(() => { OrderEngine.ProcessOrder(order); });
+            }
+            else if (ExpectException && !nullEx)
+            {
+                var ex = Assert.Throws<ArgumentException>(() => { OrderEngine.ProcessOrder(order); });
+            }
+            else
+            {
+                OrderEngine.ProcessOrder(order);
+            }
         }
     }
 }
